@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/coneImpact.ogg-d144df0f8a61768d65b7c4c85f5956ca.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/coneImpact.ogg"
+dest_files=[ "res://.import/coneImpact.ogg-d144df0f8a61768d65b7c4c85f5956ca.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

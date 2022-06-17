@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SynthZone.wav-038e3702007c1c2f7b01f945533fdce6.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SynthZone.wav"
+dest_files=[ "res://.import/SynthZone.wav-038e3702007c1c2f7b01f945533fdce6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
