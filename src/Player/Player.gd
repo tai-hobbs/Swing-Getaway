@@ -4,17 +4,40 @@ const MAX_STEER_ANGLE = 0.35
 const STEER_SPEED = 1
 const MAX_ENGINE_FORCE = 175
 const MAX_BRAKE_FORCE = 10
+const MAX_SPEED = 35
 
 var steer_target = 0.0 #where the player wants the wheels to go?
 var steer_angle = 0.0  #where the wheels currently are
 
+sync var players = {}
+var playerData = {"steer": 0, "engine": 0, "brakes": 0, "position": null}
+
+func _ready():
+	players[name] = playerData
+	players[name].position = transform
+	
+	if not is_local_player():
+		$Camera.queue_free()
+
+func is_local_player():
+	return name == str(Network.localPLayerId)
+
 func _physics_process(delta):
-	drive(delta)
+	if is_local_player():
+		drive(delta)
+	if not Network.localPLayerId == 1:
+		transform = players[name].position
+	
+	steering = players[name].steer
+	engine_force = players[name].engine
+	brake = players[name].brakes
 
 func drive(delta):
-	steering = apply_steering(delta)
-	engine_force = apply_throttle()
-	brake = apply_brakes()
+	var steering_value = apply_steering(delta)
+	var throttle = apply_throttle()
+	var brakes = apply_brakes()
+	
+	update_server(name, steering_value, throttle, brakes)
 
 func apply_steering(delta):
 	var steer_val = 0
@@ -40,10 +63,11 @@ func apply_throttle():
 	var forward = Input.get_action_strength("accelerate")
 	var reverse = Input.get_action_strength("reverse")
 	
-	if reverse:
-		throttle_val = -reverse
-	elif forward:
-		throttle_val = forward
+	if linear_velocity.length() < MAX_SPEED:
+		if reverse:
+			throttle_val = -reverse
+		elif forward:
+			throttle_val = forward
 	
 	return throttle_val * MAX_ENGINE_FORCE
 
@@ -56,3 +80,15 @@ func apply_brakes():
 
 	return brake_val * MAX_BRAKE_FORCE
 		
+func update_server(id, steering_value, throttle, brakes):
+	if not Network.localPLayerId == 1:
+		rpc_unreliable_id(1, "manage_clients", id, steering_value, throttle, brakes)
+	else:
+		manage_clients(id, steering_value, throttle, brakes)
+
+sync func manage_clients(id, steering_value, throttle, brakes):
+	players[id].steer = steering_value
+	players[id].engine = throttle
+	players[id].brake = brakes
+	players[id].position = transform
+	rset_unreliable("players", players)

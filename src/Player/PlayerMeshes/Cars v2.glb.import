@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Cars v2.glb-38f7be9e710baae858c3080a4caf2700.scn"
+path="res://.import/Cars v2.glb-68f34c5d2f7edad571fc6a6477f290ec.scn"
 
 [deps]
 
-source_file="res://Assets/Blender_Models/Cars v2.glb"
-dest_files=[ "res://.import/Cars v2.glb-38f7be9e710baae858c3080a4caf2700.scn" ]
+source_file="res://Player/PlayerMeshes/Cars v2.glb"
+dest_files=[ "res://.import/Cars v2.glb-68f34c5d2f7edad571fc6a6477f290ec.scn" ]
 
 [params]
 

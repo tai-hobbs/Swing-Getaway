@@ -49,3 +49,10 @@ margin_bottom = 101.0
 rect_min_size = Vector2( 320, 0 )
 items = [ "Player 1", null, false, "Player 2", null, false ]
 auto_height = true
+
+[node name="ReadyButton" type="Button" parent="VBoxContainer" groups=["HostOnly"]]
+visible = false
+margin_top = 151.0
+margin_right = 1024.0
+margin_bottom = 199.0
+text = "Start Game"
