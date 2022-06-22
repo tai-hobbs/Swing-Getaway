@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/RoadPieces.glb-feaccb9d82bcaa04cefec68102a40c4c.scn"
+path="res://.import/RoadPieces.glb-061500854366b077a255388b98a6bc4a.scn"
 
 [deps]
 
-source_file="res://Assets/Blender_Models/RoadPieces.glb"
-dest_files=[ "res://.import/RoadPieces.glb-feaccb9d82bcaa04cefec68102a40c4c.scn" ]
+source_file="res://Tiles/CityMeshes/RoadPieces.glb"
+dest_files=[ "res://.import/RoadPieces.glb-061500854366b077a255388b98a6bc4a.scn" ]
 
 [params]
 
