@@ -474,7 +474,6 @@ data = PoolVector3Array( 10, 0, 10, 10, 0, -10, -10, 0, -10, 10, 0, 10, -10, 0, 
 [node name="RoadPieces" type="Spatial"]
 
 [node name="00_crossroad " type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.0141 )
 mesh = SubResource( 3 )
 material/0 = null
 material/1 = null
@@ -485,7 +484,6 @@ material/1 = null
 shape = SubResource( 4 )
 
 [node name="01_t-junct " type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -33.3233 )
 mesh = SubResource( 11 )
 material/0 = null
 material/1 = null
@@ -496,7 +494,6 @@ material/1 = null
 shape = SubResource( 12 )
 
 [node name="02_t-junct " type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5801, 0, 0 )
 mesh = SubResource( 9 )
 material/0 = null
 material/1 = null
